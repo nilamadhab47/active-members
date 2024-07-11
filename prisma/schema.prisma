@@ -1,0 +1,24 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGO_URI")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model tables {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  Sno         Int?
+  date        String?
+  certificate Int?
+  membership  Int?
+  name        String
+  designation String
+  stn         String
+  divn        String
+  unit        String
+  deptt       String
+  dob         String
+  payment     String
+}
